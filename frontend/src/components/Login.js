@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 function Login(){   
+
+    var bp = require('./Path.js');
     
     var loginName;
     var loginPassword;
     const [message, setMessage] = useState('');
-
-    var bp = require('./Path.js');
 
     const doLogin = async event =>     
     {        

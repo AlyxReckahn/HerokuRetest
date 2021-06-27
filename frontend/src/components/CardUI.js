@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 
 function CardUI(){    
 
+    var bp = require('./Path.js');
+
     var card = '';
     var search = '';
-    var bp = require('./Path.js');
     
     const [message, setMessage] = useState('');
     const [searchResults, setResults] = useState('');
