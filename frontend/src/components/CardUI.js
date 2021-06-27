@@ -4,6 +4,7 @@ function CardUI(){
 
     var card = '';
     var search = '';
+    var bp = require('./Path.js');
     
     const [message, setMessage] = useState('');
     const [searchResults, setResults] = useState('');
@@ -24,7 +25,6 @@ function CardUI(){
         var js = JSON.stringify(obj);        
         try        
         {            
-            var bp = require('./Path.js');
             const response = await fetch(bp.buildPath('api/addcard'),            
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
             var txt = await response.text();            
