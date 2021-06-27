@@ -15,7 +15,7 @@ function CardUI(){
     var firstName = ud.firstName;    
     var lastName = ud.lastName;    
 
-    var bp = require('./Path.js');
+    
     
     const addCard = async event =>     
     {    
@@ -24,6 +24,7 @@ function CardUI(){
         var js = JSON.stringify(obj);        
         try        
         {            
+            var bp = require('./Path.js');
             const response = await fetch(bp.buildPath('api/addcard'),            
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
             var txt = await response.text();            
