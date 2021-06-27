@@ -1,5 +1,6 @@
 const app_name = 'cop4331-demo2';
-function buildPath(route)
+
+exposrts.buildPath = function buildPath(route)
 {    
     if (process.env.NODE_ENV === 'production')     
     {        
