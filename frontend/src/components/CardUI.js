@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 
+
+
 function CardUI(){    
 
     var bp = require('./Path.js');
+
+    var storage = require('../tokenStorage.js');
+    const jwt = require("jsonwebtoken");
 
     var card = '';
     var search = '';
@@ -22,8 +27,9 @@ function CardUI(){
     const addCard = async event =>     
     {    
         event.preventDefault();        
-        var obj = {userId:userId,card:card.value};        
-        var js = JSON.stringify(obj);        
+        var tok = storage.retrieveToken();       
+        var obj = {userId:userId,card:card.value,jwtToken:tok};       
+        var js = JSON.stringify(obj);       
         try        
         {            
             const response = await fetch(bp.buildPath('api/addcard'),            
