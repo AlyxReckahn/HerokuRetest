@@ -54,8 +54,9 @@ function CardUI(){
     const searchCard = async event =>     
     {        
         event.preventDefault();        
-        var obj = {userId:userId,search:search.value};        
-        var js = JSON.stringify(obj);        
+        var tok = storage.retrieveToken();        
+        var obj = {userId:userId,search:search.value,jwtToken:tok};        
+        var js = JSON.stringify(obj);
         try        
         {            
             const response = await fetch(bp.buildPath('api/searchcards'),            
