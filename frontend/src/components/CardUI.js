@@ -43,6 +43,9 @@ function CardUI(){
             else            
             {                
                 setMessage('Card has been added');            
+                var retTok = res.jwtToken;
+                storage.storeToken( retTok );
+
             }        
         }        
         catch(e)        
@@ -74,7 +77,10 @@ function CardUI(){
                 }            
             }            
             setResults('Card(s) have been retrieved');            
-            setCardList(resultText);        
+            setCardList(resultText);     
+            var retTok = res.jwtToken;
+            storage.storeToken( retTok );
+            
         }        
         catch(e)        
         {            
